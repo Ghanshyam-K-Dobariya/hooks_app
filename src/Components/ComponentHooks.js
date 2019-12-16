@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 function handleC(num, fn) {
   fn(num + 1)
@@ -11,9 +11,6 @@ function ComponentHooks() {
     setCount(count + 1)
   }
 
-  useEffect(() => {
-    document.title = `Clicked ${count} times`
-  })
   return (
     <div className="App">
       <h1>{count}</h1>
