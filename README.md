@@ -1,3 +1,5 @@
+## Purpose of this Repo is just to create hooks snippets... (Below content was created automatically by Github, not me 😉)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
