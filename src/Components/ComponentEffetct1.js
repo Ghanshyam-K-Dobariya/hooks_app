@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react'
 
-function ComponentEffect1() {
+function ComponentEffect1(props) {
+  const { number } = props
 
-  const [page, setPage] = useState({ x: 0, y: 0 })
+  function cleanupFunction() {
+    console.log('At Unmount of ComponentEffect1 , Props.Number is ', number)
+  }
 
   useEffect(() => {
-    function handleMouseMove(e) {
-      e.preventDefault()
-      setPage({ ...page, x: e.x, y: e.y })
-    }
-    window.addEventListener("mousemove", handleMouseMove)
-    return () => window.removeEventListener("mousemove", handleMouseMove)
+    // console.log('applying effect for number : ', number)
+    return cleanupFunction
   }, [])
 
   return (
     <div>
-      <h3>Mouse Move.... X: {page.x},  Y : {page.y} </h3>
+      <h3>Props.Number is {number} </h3>
+      <h6>I will be unmounted when Props.Number is divided by 3</h6>
     </div>
   )
 }
